@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 @FeignClient("wallet-service")
 public interface WalletClient {
-    @GetMapping("/balance/{walletId}")
+    @GetMapping("/api/wallet/balance/{walletId}")
      Double checkBalance(@PathVariable("walletId") String walletId);
 
-    @PutMapping("/credit/{walletId}/{amount}")
+    @PutMapping("/api/wallet/credit/{walletId}/{amount}")
     ResponseEntity<Double> creditAmount(@PathVariable String walletId, @PathVariable Double amount);
 
-    @PutMapping("/debit/{walletId}/{amount}")
+    @PutMapping("/api/wallet/debit/{walletId}/{amount}")
      void debitAmount(@PathVariable("walletId") String walletId, @PathVariable("amount") Double amount);
 }

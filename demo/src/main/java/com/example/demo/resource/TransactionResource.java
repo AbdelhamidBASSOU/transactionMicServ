@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api/transaction")
 public class TransactionResource {
     private final TransactionService transactionService;
 
